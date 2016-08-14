@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_landmarks"
             android:icon="@drawable/ic_account_balance_black_24dp"
             android:title="@string/attraction_type_landmarks" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_shops"
             android:icon="@drawable/ic_card_giftcard_black_24dp"
             android:title="@string/attractions_type_shops" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_cinemas"
             android:icon="@drawable/ic_event_seat_black_24dp"
             android:title="@string/attraction_type_cinemas" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_parks"
             android:icon="@drawable/ic_nature_people_black_24dp"
             android:title="@string/attraction_type_parks" />
     </group>
