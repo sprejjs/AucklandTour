@@ -65,6 +65,9 @@ public class ListFragment extends Fragment {
                 results.add(new Landmark("Sky City", "Victoria Street & Federal Street, Auckland ", R.drawable.sky_city));
                 break;
             case Shops:
+                results.add(new Landmark("Sylvia Park Shopping Mall", "286 Mount Wellington Hwy, Mount Wellington", null));
+                results.add(new Landmark("Dressmart Shopping Mall", "151 Arthur St, Onehunga", null));
+                results.add(new Landmark("St Lukes Shopping Mall", "80 St Lukes Rd, St Lukes", null));
                 break;
             case Parks:
                 break;
@@ -100,7 +103,9 @@ public class ListFragment extends Fragment {
             ImageView imageView = (ImageView) view.findViewById(R.id.lanmark_item_image);
             imageView.setVisibility(landmark.getDrawableResourceId() != null ? View.VISIBLE : View.GONE);
 
-            imageView.setImageResource(landmark.getDrawableResourceId());
+            if (landmark.getDrawableResourceId() != null) {
+                imageView.setImageResource(landmark.getDrawableResourceId());
+            }
 
             return view;
         }
