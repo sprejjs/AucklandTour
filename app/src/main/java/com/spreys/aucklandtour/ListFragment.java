@@ -50,6 +50,8 @@ public class ListFragment extends Fragment {
         List<Landmark> landmarks = getLandmarksForType();
         landmarksListView.setAdapter(new LandmarksAdapter(getActivity(), landmarks));
 
+        getActivity().setTitle(getTitle());
+
         return view;
     }
 
@@ -82,6 +84,23 @@ public class ListFragment extends Fragment {
         }
 
         return results;
+    }
+
+    private String getTitle() {
+        ListType type = (ListType)getArguments().getSerializable(KEY_VIEW_TYPE);
+
+        switch (type) {
+            case Landmarks:
+                return "Landmarks";
+            case Shops:
+                return "Shops";
+            case Parks:
+                return "Parks";
+            case Cinemas:
+                return "Cinemas";
+            default:
+                throw new IllegalArgumentException("Incorrect view type supplied");
+        }
     }
 
     private class LandmarksAdapter extends ArrayAdapter<Landmark> {
