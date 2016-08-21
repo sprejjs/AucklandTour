@@ -9,4 +9,10 @@
     <string name="attractions_type_shops">Shops</string>
     <string name="attraction_type_cinemas">Cinemas</string>
     <string name="attraction_type_parks">Parks</string>
+    <string name="city_name">Auckland</string>
+    <string name="city_area">Area: 1,086 km²</string>
+    <string name="city_elevation">Elevation: 196 m</string>
+    <string name="city_population">Population: 1.377 million (Jun 2011)</string>
+    <string name="city_area_code">Area code: 09</string>
+    <string name="city_mayor">Mayor: Len Brown</string>
 </resources>

@@ -14,32 +14,32 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Auckland"
+        android:text="@string/city_name"
         android:textAppearance="?android:textAppearanceMedium" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Area: 1,086 km²" />
+        android:text="@string/city_area" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Elevation: 196 m" />
+        android:text="@string/city_elevation" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Population: 1.377 million (Jun 2011)" />
+        android:text="@string/city_population" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Area code: 09" />
+        android:text="@string/city_area_code" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mayor: Len Brown" />
+        android:text="@string/city_mayor" />
 
 </LinearLayout>
