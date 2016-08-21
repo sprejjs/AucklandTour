@@ -65,9 +65,6 @@ public class MainActivity extends AppCompatActivity
             launchFragment(ListFragment.ListType.Parks);
         }
 
-        Button button = (Button)findViewById(R.id.nav_parks);
-        String text = button.getText().toString();
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity
         bundle.putSerializable(ListFragment.KEY_VIEW_TYPE, listType);
         fragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.app_bar_main_fragment_container, fragment);
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

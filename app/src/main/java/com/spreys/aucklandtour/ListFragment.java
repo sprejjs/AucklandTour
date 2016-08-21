@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +48,7 @@ public class ListFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         List<Landmark> landmarks = getLandmarksForType();
+        landmarksListView.setAdapter(new LandmarksAdapter(getActivity(), landmarks));
 
         return view;
     }
@@ -57,7 +60,9 @@ public class ListFragment extends Fragment {
 
         switch (type) {
             case Landmarks:
-                results.add(new Landmark());
+                results.add(new Landmark("Auckland Museum", "The Auckland Domain, Parnell", R.drawable.auckland_museum));
+                results.add(new Landmark("One Tree Hill Obelisk", "670 Manukau Rd, Epsom", R.drawable.one_tree_hill_obelisk));
+                results.add(new Landmark("Sky City", "Victoria Street & Federal Street, Auckland ", R.drawable.sky_city));
                 break;
             case Shops:
                 break;
@@ -73,15 +78,31 @@ public class ListFragment extends Fragment {
     private class LandmarksAdapter extends ArrayAdapter<Landmark> {
         List<Landmark> landmarks;
 
-        public LandmarksAdapter(Context context, int resource, List<Landmark> landmarks) {
+        public LandmarksAdapter(Context context, List<Landmark> landmarks) {
             super(context, 0, landmarks);
             this.landmarks = landmarks;
         }
 
         @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return super.getView(position, convertView, parent);
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            View view = convertView;
+            if (view == null) {
+                view = LayoutInflater.from(getContext()).inflate(R.layout.landmark_item, parent,
+                        false);
+            }
+
+            Landmark landmark = this.landmarks.get(position);
+
+            ((TextView)view.findViewById(R.id.ladmark_item_name)).setText(landmark.getName());
+            ((TextView)view.findViewById(R.id.lanmark_item_location)).setText(landmark.getLocation());
+
+            ImageView imageView = (ImageView) view.findViewById(R.id.lanmark_item_image);
+            imageView.setVisibility(landmark.getDrawableResourceId() != null ? View.VISIBLE : View.GONE);
+
+            imageView.setImageResource(landmark.getDrawableResourceId());
+
+            return view;
         }
 
         @Override
