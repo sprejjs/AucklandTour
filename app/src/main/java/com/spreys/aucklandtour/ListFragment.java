@@ -70,8 +70,14 @@ public class ListFragment extends Fragment {
                 results.add(new Landmark("St Lukes Shopping Mall", "80 St Lukes Rd, St Lukes", null));
                 break;
             case Parks:
+                results.add(new Landmark("Cornwall Park", "193 Green Ln W", null));
+                results.add(new Landmark("Albert Park", "Bowen Ln, Auckland", null));
+                results.add(new Landmark("Victoria Park", "203-271 Victoria Street, Auckland 1010", null));
                 break;
             case Cinemas:
+                results.add(new Landmark("Berkeley Cinemas", "85 Tamaki Dr, Auckland 1071", null));
+                results.add(new Landmark("Event Cinemas", "Level 3, Metro Building, 291-297 Queen St, Auckland, 1010", null));
+                results.add(new Landmark("HOYTS Cinemas", "Sylvia Park Shopping Centre, 286 Mount Wellington Highway, Sylvia Park Shopping Centre", null));
                 break;
         }
 
